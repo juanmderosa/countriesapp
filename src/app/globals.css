@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.loader {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto;
+  position: relative;
+  background: #fff;
+  box-shadow: -24px 0 #fff, 24px 0 #fff;
+  box-sizing: border-box;
+  animation: shadowPulse 2s linear infinite;
+}
+
+@keyframes shadowPulse {
+  33% {
+    background: #fff;
+    box-shadow: -24px 0 #ff3d00, 24px 0 #fff;
+  }
+  66% {
+    background: #ff3d00;
+    box-shadow: -24px 0 #fff, 24px 0 #fff;
+  }
+  100% {
+    background: #fff;
+    box-shadow: -24px 0 #fff, 24px 0 #ff3d00;
+  }
+}
+
+/* .content-select {
+  max-width: 250px;
+  position: relative;
+} */
+
+.content-select select {
+  /*   display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  padding: 7px 10px;
+  height: 40px;
+  outline: 0;
+  border: 0;
+  background: white;
+  color: #7b7b7b;
+  font-size: 1em;
+  color: #999;
+  border-radius: 6px;
+  position: relative;
+  transition: all 0.25s ease; */
+}
+
+/* .content-select select:hover {
+  background: #7e5937;
+}
+ */
+/* 
+Creamos la fecha que aparece a la izquierda del select.
+Realmente este elemento es un cuadrado que sólo tienen
+dos bordes con color y que giramos con transform: rotate(-45deg);
+*/
+/* .content-select i {
+  position: absolute;
+  right: 20px;
+  top: calc(50% - 13px);
+  width: 16px;
+  height: 16px;
+  display: block;
+  border-left: 4px solid #2ac176;
+  border-bottom: 4px solid #2ac176;
+  transform: rotate(-45deg); 
+  transition: all 0.25s ease;
+}
+
+.content-select:hover i {
+  margin-top: 3px;
+}
+ */
