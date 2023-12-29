@@ -26,7 +26,7 @@ export const CountriesContainer = async ({ query, region }: any) => {
   }
 
   return (
-    <section className="py-8 flex flex-wrap justify-center xs:justify-between items-center gap-8 ">
+    <section className="py-8 flex flex-wrap justify-center sm:justify-between items-center gap-8 content-start">
       <Suspense>
         {Array.isArray(countriesToShow) ? (
           countriesToShow.map((country: any) => (
