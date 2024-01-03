@@ -14,7 +14,7 @@ const page = async ({ params }: { params: { name: string } }) => {
   const borderCountries: string[] = country[0].borders
     ? Object.values(country[0].borders)
     : [];
-  console.log(borderCountries);
+
   return (
     <main className="px-4 lg:px-20 py-8 ">
       <BackButton />

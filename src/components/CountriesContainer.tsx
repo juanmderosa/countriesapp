@@ -3,12 +3,20 @@ import {
   getCountriesByRegion,
   getCountriesBySearchName,
 } from "@/lib/data";
+import { Countries } from "@/lib/definitions";
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 
-export const CountriesContainer = async ({ query, region }: any) => {
-  console.log(query);
+interface CountriesContainerProps {
+  query: string;
+  region: string;
+}
+
+export const CountriesContainer = async ({
+  query,
+  region,
+}: CountriesContainerProps) => {
   let countriesToShow;
 
   if (query !== "") {
@@ -16,7 +24,8 @@ export const CountriesContainer = async ({ query, region }: any) => {
 
     if (region !== "") {
       countriesToShow = countriesToShow.filter(
-        (country: any) => country.region.toLowerCase() === region.toLowerCase()
+        (country: Countries) =>
+          country.region.toLowerCase() === region.toLowerCase()
       );
     }
   } else if (region !== "") {
@@ -29,7 +38,7 @@ export const CountriesContainer = async ({ query, region }: any) => {
     <section className="py-8 flex flex-wrap justify-center sm:justify-between items-center gap-8 content-start">
       <Suspense>
         {Array.isArray(countriesToShow) ? (
-          countriesToShow.map((country: any) => (
+          countriesToShow.map((country: Countries) => (
             <Link
               href={`/country/${country.name.common}`}
               key={country.name.common}>

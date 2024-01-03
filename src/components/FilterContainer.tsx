@@ -12,7 +12,6 @@ export const FilterContainer = () => {
 
   const handleChange = useDebouncedCallback((term: string) => {
     const params = new URLSearchParams(searchParams);
-    console.log(term);
     if (term) {
       params.set("query", term);
     } else {

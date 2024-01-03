@@ -15,7 +15,7 @@ export interface Countries {
   region: string;
   subregion: string;
   languages: Languages;
-  translations: { [key: string]: Latlng[] };
+  translations: { [key: string]: string };
   latlng: number[];
   landlocked: boolean;
   borders: string[];
@@ -40,11 +40,6 @@ export interface CapitalInfo {
 
 export interface Latlng {}
 
-export interface Car {
-  signs: Latlng[];
-  side: string;
-}
-
 export interface CoatOfArms {
   png: string;
   svg: string;
@@ -59,8 +54,7 @@ export interface Currencies {
 }
 
 export interface Demonyms {
-  eng: Latlng[];
-  fra: Latlng[];
+  [key: string]: string;
 }
 
 export interface Flags {
@@ -86,5 +80,13 @@ export interface Maps {
 export interface Name {
   common: string;
   official: string;
-  nativeName: Latlng[];
+  nativeName: nativeName;
+}
+
+interface nativeName {
+  [key: string]: string;
+}
+
+interface Car {
+  [key: string]: string;
 }

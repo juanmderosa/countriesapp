@@ -25,10 +25,6 @@ export const ThemeChanger = () => {
     }
   };
 
-  console.log(theme);
-
-  let src;
-
   return (
     <div
       className="flex items-center gap-2 cursor-pointer"
